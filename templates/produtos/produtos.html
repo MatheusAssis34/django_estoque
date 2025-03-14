@@ -1,69 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+{% block conteudo %}
 
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        
+  <div class="album py-5 bg-body-tertiary">
+    <div class="container">
 
-        &  table th,
-         table td {
-            border: 1 solid rgb(165, 86, 86);
-            padding: 8px;
-            text-align: left;
-        }
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-body-secondary">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </div>  
+    </div>
+  </div>
 
-        & th {
-            background-color: rgb(185, 125, 125);
-            color: rgb(0, 0, 0);
-        }
-    
-    </style>
-</head>
+</main>
 
-<body>
-    <h1>LISTA DE PRODUTOS</h1>
-
-    <table>
-        <thead>
-            <th>
-            <td>ID</td>
-            <td>Nome</td>
-            <td>Descricao</td>
-            <td>Preço</td>
-            <td>Qtd. Estoque</td>
-            <td>Categoria</td>
-            <td>Fornecedor</td>
-            </th>
-        </thead>
-
-        <tbody>
-            {% for produto in produtos %}
-            <tr>
-                <td>{{produto.id}}</td>
-                <td>{{produto.nome}}</td>
-                <td>{{produto.descricao}}</td>
-                <td>{{produto.preco}}</td>
-                <td>{{produto.quantidadeEstoque}}</td>
-                <td>{{produto.categoria}}</td>
-                <td>{{produto.fornecedor}}</td>
-            </tr>
-            {%empty%}
-
-            <tr>
-                <td colspan="7"> Nenhum produto encontrado </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</body>
-
-</html>
+{% endblock conteudo %}
